@@ -1,0 +1,161 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000;
+  background-color: #16232b;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+}
+
+.inner {
+  height: 70vh;
+  margin: 30px auto;
+  position: relative;
+  max-width: 75%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  background-color: #16232b;
+  max-height: 90%;
+  position: relative;
+  width: 400%;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.radio-btn {
+  display: none;
+}
+
+.text {
+  color: #fff;
+  margin-top: 12px;
+}
+
+.slide {
+  height: inherit;
+  width: 25%;
+  transition: all 0.5s ease-in-out;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  margin-top: 20px;
+}
+
+.control-btn {
+  cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 0 8px;
+  position: relative;
+  background-color: #279ef5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+.control-btn:hover {
+  background-color: #fff;
+}
+
+.control-btn:active {
+  background-color: #16232b;
+  border: 2px solid #279ef5;
+}
+
+#slide1:checked ~ #controls label,
+#slide2:checked ~ #controls label,
+#slide3:checked ~ #controls label,
+#slide4:checked ~ #controls label {
+  background-color: #16232b;
+  border: 2px solid #279ef5;
+}
+
+#slide1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+  margin-left: -25%;
+}
+
+#slide3:checked ~ .s1 {
+  margin-left: -50%;
+}
+
+#slide4:checked ~ .s1 {
+  margin-left: -75%;
+}
+
+@media screen and (max-width: 768px) {
+  .inner {
+    height: 60vh;
+    max-width: 85%;
+  }
+  .slider {
+    max-height: 80%;
+  }
+  .controls {
+    float: none;
+    z-index: 100;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .text {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .inner {
+    height: 50vh;
+    max-width: 100%;
+  }
+  .slider {
+    max-height: 70%;
+  }
+}
