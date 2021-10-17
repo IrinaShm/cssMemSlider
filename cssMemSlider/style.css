@@ -1,0 +1,131 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000;
+  background-color: #16232b;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+}
+
+.inner {
+  height: 70vh;
+  margin: 30px auto;
+  position: relative;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.text {
+  color: #fff;
+  margin-top: 3%;
+}
+
+.slider {
+  display: flex;
+  background-color: #16232b;
+  height: 95%;
+  position: relative;
+  width: 400%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.radio-btn {
+  display: none;
+}
+
+.slide {
+  height: inherit;
+  width: 25%;
+  transition: all 0.5s ease-in-out;
+}
+
+.controls {
+  float: right;
+  z-index: 100;
+}
+
+.control-btn {
+  cursor: pointer;
+  display: inline-block;
+  height: 12px;
+  margin: 0 6px;
+  position: relative;
+  width: 12px;
+  background-color: #279ef5;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+.control-btn:hover {
+  background-color: #fff;
+}
+
+/* .control-btn::after {
+  content: "";
+  display: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #16232b;
+  border: 2px solid #279ef5;
+  z-index: 50;
+}
+
+#slide1:checked ~ .controls label:nth-child(1)::after,
+#slide2:checked ~ .controls label:nth-child(2)::after,
+#slide3:checked ~ .controls label:nth-child(3)::after,
+#slide4:checked ~ .controls label:nth-child(4)::after {
+  display: block;
+} */
+
+#slide1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+  margin-left: -25%;
+}
+
+#slide3:checked ~ .s1 {
+  margin-left: -50%;
+}
+
+#slide4:checked ~ .s1 {
+  margin-left: -75%;
+}
